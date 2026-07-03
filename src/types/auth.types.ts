@@ -5,16 +5,21 @@ export interface AuthState {
   loading: boolean;
   error: string | null;
 } 
-export interface LoginPayload {
-  username: string;
+export interface LoginRequest {
+  userId: string;
   password: string;
 }
-export interface LoginResponse {
-  token: string;
-  user: any;
-}
-export interface user{
+export interface User{
   id: number;
   username: string;
   email: string;
+}
+
+export interface LoginResponse {
+  success: boolean;
+  data: {
+    token: string;
+    user: User;
+  };
+  message?: string;
 }

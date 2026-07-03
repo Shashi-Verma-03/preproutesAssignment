@@ -22,10 +22,10 @@ const authSlice = createSlice({
     loginSuccess(state, action: PayloadAction<LoginResponse>) {
       state.loading = false;
       state.isAuthenticated = true;
-      state.token = action.payload.token;
-      state.user = action.payload.user;
+      state.token = action.payload.data.token;
+      state.user = action.payload.data.user;
 
-      localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("token", action.payload.data.token);
     },
 
     loginFailure(state, action: PayloadAction<string>) {
