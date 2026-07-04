@@ -1,3 +1,59 @@
-.login-container{
+@use "../../styles/mixins" as *;
 
+.login-container{
+@include flexWrapper;
+  width: 100%;
+  height: 100vh;
+  column-gap: 20px;
+  background-color: rgb(95 149 237 / 13%);
+  .login-left-side{
+    width: 50%;
+    img{
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .login-img-wrapper{
+   @include flexWrapper;
+   width: 50%;
+    img{
+      object-fit: cover;
+    }
+  }
+  .login-right-side{
+    background-color: rgb(255 255 255 / 100%);
+    width: calc(100% - 50% - 50px);
+    border-radius: 10px;
+  }
+  .login-form-wrapper{
+    @include flexLeftAlign;
+    width: 100%;
+    height: 90vh;
+   .login-form-content{
+    @include flexwithDirection(column);
+    padding: 50px;
+    width: 100%;
+    img{
+      width: 50%;
+    }
+    .form-section{
+      @include flexwithDirection(column);
+      gap: 20px;
+      .form-controller{
+        @include flexwithDirection(column);
+        row-gap: 10px;
+      }
+      .form-button{
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        border: none;
+        background-color: #5f95ed;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+   }
+  }
 }
